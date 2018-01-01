@@ -13,23 +13,21 @@ public class Main {
         Seriale warmup = new Seriale();
         warmup.computeOnerousSum(factoryTree.randomBinaryTree(5));
 
-        for(int i = 8; i <= 20; i = i+4) {
+        for(int i = 8; i <= 20; i+=4) {
             Node tree = factoryTree.randomBinaryTree(i);
-            speedupBinaryTreeAdder = new SpeedupBinaryTreeAdder();
+            speedupBinaryTreeAdder = new SpeedupBinaryTreeAdder(new Seriale(), tree);
             Double speedup;
 
-            Seriale seriale = new Seriale();
-
-            speedup = speedupBinaryTreeAdder.getSpeedUp(seriale, new BufferBinaryTreeAdder(), tree);
+            speedup = speedupBinaryTreeAdder.getSpeedUp(new BufferBinaryTreeAdder());
             System.out.println("HWJ1, height = " + i + ":\t" + speedup);
 
-            speedup = speedupBinaryTreeAdder.getSpeedUp(seriale, new BufferBinaryTreeAdder(tree.getMaxDepth()), tree);
+            speedup = speedupBinaryTreeAdder.getSpeedUp(new BufferBinaryTreeAdder(tree.getMaxDepth()));
             System.out.println("HWJ2, height = " + i + ":\t" + speedup);
 
-            speedup = speedupBinaryTreeAdder.getSpeedUp(seriale, new ForkJoinBinaryTreeAdder(), tree);
+            speedup = speedupBinaryTreeAdder.getSpeedUp(new ForkJoinBinaryTreeAdder());
             System.out.println("HWJ3, height = " + i + ":\t" + speedup);
 
-            System.out.println("======================================\n");
+            System.out.println("=======================\n");
         }
 
     }

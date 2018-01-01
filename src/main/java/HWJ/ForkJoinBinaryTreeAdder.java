@@ -13,7 +13,7 @@ public class ForkJoinBinaryTreeAdder implements BinaryTreeAdder {
 
         private final Node node;
         private final BinaryTreeAdder seriale = new Seriale();
-        private final int SEQUENTIAL_THRESHOLD = 5;
+        private final int THRESHOLD = 32;
         private final OnerousProcessor onerousProcessor = new FactoryOnerousProcessor().createFakeProcessor();
 
         Task(Node node) {
@@ -26,7 +26,7 @@ public class ForkJoinBinaryTreeAdder implements BinaryTreeAdder {
             if(node == null)
                 return 0;
 
-            if(node.getMaxDepth() < SEQUENTIAL_THRESHOLD)
+            if(node.getNumberOfNodes() <= THRESHOLD)
                 return seriale.computeOnerousSum(node);
 
             Task left = null, right = null;

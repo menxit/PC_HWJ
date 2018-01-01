@@ -7,15 +7,19 @@ import java.util.HashMap;
 
 public class SpeedupBinaryTreeAdder {
 
-    private Double benchmarkType1 = null;
+    private Double benchmarkSeriale;
+    private Node node;
 
-    public double getSpeedUp(BinaryTreeAdder type1, BinaryTreeAdder type2, Node node) {
+    public SpeedupBinaryTreeAdder(BinaryTreeAdder seriale, Node node) {
         BenchmarkBinaryTreeAdder benchmarkBinaryTreeAdder = new BenchmarkBinaryTreeAdder();
-        if(benchmarkType1 == null) {
-            benchmarkType1 = benchmarkBinaryTreeAdder.getBenchmark(type1, node);
-        }
-        double benchmarkType2 = benchmarkBinaryTreeAdder.getBenchmark(type2, node);
-        return Math.floor((benchmarkType1/benchmarkType2)*10)/10;
+        this.benchmarkSeriale = benchmarkBinaryTreeAdder.getBenchmark(seriale, node);
+        this.node = node;
+    }
+
+    public double getSpeedUp(BinaryTreeAdder concorrente) {
+        BenchmarkBinaryTreeAdder benchmarkBinaryTreeAdder = new BenchmarkBinaryTreeAdder();
+        double benchmarkType2 = benchmarkBinaryTreeAdder.getBenchmark(concorrente, node);
+        return Math.floor((benchmarkSeriale/benchmarkType2)*10)/10;
     }
 
 }
