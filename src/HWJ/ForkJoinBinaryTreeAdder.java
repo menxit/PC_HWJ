@@ -2,7 +2,6 @@ package HWJ;
 
 import Factories.FactoryOnerousProcessor;
 import OnerousProcessor.OnerousProcessor;
-import Queue.*;
 import Tree.Node;
 
 import java.util.concurrent.ForkJoinPool;
@@ -10,23 +9,19 @@ import java.util.concurrent.RecursiveTask;
 
 public class ForkJoinBinaryTreeAdder implements BinaryTreeAdder {
 
-    private final OnerousProcessor onerousProcessor = new FactoryOnerousProcessor().createFakeProcessor();
-
     private static class Task extends RecursiveTask<Integer> {
 
-        private final Queue<Node> queue = new ConcurrentQueue<Node>();
+        private final Node node;
         private final BinaryTreeAdder seriale = new Seriale();
-        private final int SEQUENTIAL_THRESHOLD = 8;
+        private final int SEQUENTIAL_THRESHOLD = 5;
         private final OnerousProcessor onerousProcessor = new FactoryOnerousProcessor().createFakeProcessor();
 
-        Task(Node root) {
-            queue.push(root);
+        Task(Node node) {
+            this.node = node;
         }
 
         @Override
         protected Integer compute() {
-
-            Node node = queue.pop();
 
             if(node == null)
                 return 0;
