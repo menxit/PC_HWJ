@@ -1,11 +1,8 @@
 package Tree;
 
 import java.util.Deque;
-import java.util.Queue;
 import java.util.Spliterator;
-import java.util.Stack;
 import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.function.Consumer;
 
 public class TreeSpliterator<T> implements Spliterator<T> {
