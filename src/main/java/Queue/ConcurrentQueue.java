@@ -2,7 +2,7 @@ package Queue;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class ConcurrentQueue<T> implements Queue<T> {
+public class ConcurrentQueue<T> implements HWJQueue<T> {
 
     private final ConcurrentLinkedQueue<T> queue = new ConcurrentLinkedQueue<>();
 

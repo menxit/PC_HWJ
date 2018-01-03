@@ -1,15 +1,12 @@
 package Queue;
 
-import HWJ.Seriale;
-
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.Semaphore;
 
-public class WorkStealingQueue<T> implements Queue<T> {
+public class WorkStealingQueue<T> implements HWJQueue<T> {
 
     private int sizeSingleScheduleQueue;
     private Map<Thread, BlockingDeque<T>> scheduleQueues = new ConcurrentHashMap<>();

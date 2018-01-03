@@ -1,6 +1,6 @@
 package Queue;
 
-public interface Queue<T> {
+public interface HWJQueue<T> {
 
     /**
      * Aggiunge un elemento.

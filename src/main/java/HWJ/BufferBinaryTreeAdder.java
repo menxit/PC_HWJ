@@ -12,7 +12,7 @@ import java.util.concurrent.*;
 public class BufferBinaryTreeAdder implements BinaryTreeAdder {
 
     private ExecutorService executorService;
-    private Queue<Node> buffer;
+    private HWJQueue<Node> buffer;
     private final OnerousProcessor onerousProcessor = new FactoryOnerousProcessor().createFakeProcessor();
     private final int numberOfWorkers = Runtime.getRuntime().availableProcessors();
     private Semaphore sx;
