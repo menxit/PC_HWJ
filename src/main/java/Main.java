@@ -27,6 +27,9 @@ public class Main {
             speedup = speedupBinaryTreeAdder.getSpeedUp(new ForkJoinBinaryTreeAdder());
             System.out.println("HWJ3, height = " + i + ":\t" + speedup);
 
+            speedup = speedupBinaryTreeAdder.getSpeedUp(new ParallelStreamBinaryTreeAdder());
+            System.out.println("HWJ4, height = " + i + ":\t" + speedup);
+
             System.out.println("=======================\n");
         }
 

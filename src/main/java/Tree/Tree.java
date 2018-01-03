@@ -73,4 +73,24 @@ public class Tree implements Node {
         return node.getValue() + "\n" + toString(node.getSx()) + toString(node.getDx());
     }
 
+    @Override
+    public Boolean hasSx() {
+        return this.getSx() != null;
+    }
+
+    @Override
+    public Boolean hasDx() {
+        return this.getDx() != null;
+    }
+
+    @Override
+    public void setSx(Node sx) {
+        this.sx = sx;
+    }
+
+    @Override
+    public void setDx(Node dx) {
+        this.dx = dx;
+    }
+
 }
