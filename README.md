@@ -1,3 +1,8 @@
+# How to run
+```
+java -jar HWJ.jar
+```
+
 # HWJ1 e HWJ2
 
 Per risolvere HWJ1 e HWJ2 è stata utilizzata un unica classe, denominata BufferBinaryTreeAdder.
