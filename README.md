@@ -1,6 +1,6 @@
 # How to run
 ```
-java -jar HWJ.jar
+mvn package -Dmaven.test.skip=true && java -jar target/P_HWJ-1.0-SNAPSHOT.jar 
 ```
 
 ### Risultati Speedup
