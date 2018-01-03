@@ -60,7 +60,7 @@ la WorkStealingQueue.
 Qui si fa semplicemente il poll del primo nodo e si pushano nel buffer i figli.
 
 ### estimateSize
-Si fa la somam dei nodi di ciascun rimanente albero nel buffer.
+Si fa la somma dei nodi di ciascun rimanente albero nel buffer.
 ```java
 @Override
 public long estimateSize() {
