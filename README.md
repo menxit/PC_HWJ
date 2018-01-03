@@ -3,6 +3,34 @@
 java -jar HWJ.jar
 ```
 
+### Risultati Speedup
+Risultati ottenuti su una macchina con 16 core:
+```
+HWJ1, height = 8:	0.2
+HWJ2, height = 8:	2.3
+HWJ3, height = 8:	0.6
+HWJ4, height = 8:	2.8
+=======================
+
+HWJ1, height = 12:	6.7
+HWJ2, height = 12:	4.1
+HWJ3, height = 12:	9.3
+HWJ4, height = 12:	8.0
+=======================
+
+HWJ1, height = 16:	10.3
+HWJ2, height = 16:	7.9
+HWJ3, height = 16:	11.3
+HWJ4, height = 16:	12.0
+=======================
+
+HWJ1, height = 20:	12.3
+HWJ2, height = 20:	8.6
+HWJ3, height = 20:	9.1
+HWJ4, height = 20:	13.0
+=======================
+```
+
 # HWJ1 e HWJ2
 
 Per risolvere HWJ1 e HWJ2 è stata utilizzata un unica classe, denominata BufferBinaryTreeAdder.
