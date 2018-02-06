@@ -131,18 +131,13 @@ public class BufferBinaryTreeAdder implements BinaryTreeAdder {
          * Se non riesco a ottenere neanche un semaforo
          * e il buffer è vuoto significa che il buffer è vuoto e che
          * nessuno sta lavorando, quindi posso uscire.
-         */
-        if(!sx.tryAcquire(1) && buffer.isEmpty()) {
-            sx.release();
-            return true;
-        }
-
-        /**
+         *
          * Altrimenti significa che c'è almeno un worker che
          * sta lavorando o che il buffer non è vuoto. In entrambi
          * i casi non è ancora possibile uscire.
          */
-        return false;
+
+        return sx.availablePermits() == 0 && buffer.isEmpty();
 
     }
 
